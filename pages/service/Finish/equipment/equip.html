@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>派工</title>
+		<link rel="stylesheet" type="text/css" href="../../../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../static/styles/service/dispatch.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../static/styles/service/equipment.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="search uinn ub">
+				<span><img src="../../../../static/images/icon_fangdajing.png"/></span>
+				<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+			</div>
+			<div class="content">
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">1号灯</span>
+
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">2号灯</span>
+
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">3号灯</span>
+
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">4号灯</span>
+
+				</div>
+			</div>
+			
+			<button class="bg-6494f6 ulev0">提交</button>
+		</div>
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script type="text/javascript">
+		
+		$(function() {
+			$(".con").click(function() {
+				$(".con span>img").css("display","none")
+				$(this).find("span>img").css("display","block")
+			})
+			$(".box button").click(function() {
+				var equip=""
+				$($(".con")).each(function() {
+					if ($(this).find("span>img").css("display") == "block") {
+						equip=$(this).children().eq(1).text()
+						console.log($(this).children().eq(1).text())
+					}
+				})
+				
+				window.history.go(-4)
+			})
+			
+		})
+	</script>
+</html>

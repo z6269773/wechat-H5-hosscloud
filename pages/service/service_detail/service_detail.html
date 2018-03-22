@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>工单详情</title>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/service/service_detail.css"/>
+	</head>
+	<body>
+		
+		<div class="box">
+			<div class="head ub ulev-25 tx-c uinn0">
+				<span class="color">报修信息</span>
+				<span>维修信息</span>
+				<!--<span>工单轨迹</span>-->
+			</div>
+			
+			<div class="info marigntop"></div>
+			
+		</div>
+
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+	<script type="text/javascript">
+	
+		var idddd = localStorage.getItem('iid')
+		var types = localStorage.getItem('type')
+		var dispatchNo = localStorage.getItem('dispatchNo')
+		
+		function service_detail(url) {
+			$.ajax({
+				type:"get",
+				url:url,
+				async:true,
+				success:function(data) {
+					$(".info").html(data)
+				},
+				error:function(data){
+					
+				}
+			});
+		}
+		
+		service_detail("service_detail_b.html")
+		
+		
+		$(".head span").click(function() {
+			var index=$(this).index();
+			$(".head span").removeClass("color")
+			$(this).addClass("color")
+			switch(index){
+				case 0: 
+					service_detail("service_detail_b.html")
+					break; 
+				case 1: 
+					service_detail("service_detail_w.html")	
+					break; 
+//				case 2: 
+//					service_detail("service_detail_gj.html")
+//					break; 
+			}
+		})
+		
+		var btn_sub
+		$(".info").on("click",".content3 button",function(e) {
+			e.stopPropagation()
+			btn_sub=$(this)
+			var type=$(this).text()
+			var iid=$(this).parents(".info").attr("iid")
+			
+			localStorage.setItem("iid",idddd)
+			localStorage.setItem("types","2")
+			localStorage.setItem("dispatchNo",dispatchNo)
+			
+//			console.log(type)
+			switch(type){
+				case "派工": 
+					window.location="../Dispatch/Dispatch.html"
+					break; 
+				case "接单": 
+//					window.location=""
+//					alert("接单成功")
+					jiedan(idddd)
+					break; 
+				case "转单": 
+					window.location="../Turnsingle/Turnsingle.html"
+					break; 
+				case "挂单": 
+					window.location="../Guadan/Guadan.html"
+					break; 
+				case "完工": 
+					window.location="../Finish/Finish.html"
+					break;
+				case "继续维修": 
+//					window.location=""
+//					alert("继续维修成功")
+					continue_repair(idddd)
+					break;
+			}
+		})
+		
+		
+		function jiedan(iid) {
+			$.ajax({
+				url: ias.api.serviceAccept
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"serviceId": iid
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+						window.history.go(-1)
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		
+		function continue_repair(iid) {
+			$.ajax({
+				url: ias.api.serviceJoin
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"serviceId":iid
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+//						alert("成功");\n
+						localStorage.setItem("status","1")
+						btn_sub.html("完工")
+						btn_sub.after('<button class="bg-6494f6 ulev0 btn12">挂单</button>')
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		
+		
+	</script>
+</html>

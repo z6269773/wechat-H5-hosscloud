@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>服务评价</title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/styles/service/service.css" />
+
+    <!-- 公共js -->
+    <script src="../../static/script/jquery.min.js?v=1.91" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/api/api.js"></script>
+
+    <!-- fundebug -->
+    <script src="https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js" apikey="5785d9db5937716cf70e5b2c99587d65669c4b576b158e793cec2b909ca0d320"></script>
+
+    <!-- 自定义js -->
+    <script src="../../static/script/repair/jq-1855cde699.start.js"></script>
+    <script src="../../static/script/repair/main-830850dc15.js"></script>
+    <script src="../../static/script/repair/tab-a4e854ba05.js"></script>
+
+    <script src="../../static/script/repair/complaint-b18be4938e.js"></script>
+    
+</head>
+
+<body>
+    <div class="box">
+        <div class="">
+            <ul>
+                <li class="card" id="RepairThis">
+                   
+                </li>
+                <li class="card card-start">
+                    <div class="card-items card-no">
+                        <label for="" class="ufl">维修及时</label>
+                        <div class="star ufr" id="repairScore" data-score="5"></div>
+                    </div>
+                    <div class="card-items card-no">
+                        <label for="" class="ufl">维修态度</label>
+                        <div class="star ufr" id="serviceScore" data-score="5"></div>
+                    </div>
+                    <div class="card-items card-no">
+                        <label for="" class="ufl" data-score="5">维修质量</label>
+                        <div class="star ufr" id="qualityScore" data-score="5"></div>
+                    </div>
+                    <div class="card-items card-no">
+                        <label for="" class="ufl">维修频率</label>
+                        <div class="star ufr" id="numberScore" data-score="5"></div>
+                    </div>
+                    <p class="evaluate-center">
+                        <textarea name="descs" id="descs" placeholder="请给工人评价"></textarea>
+                    </p>
+                </li>
+            </ul>
+            <!-- content end -->
+            <p class="content-center">
+                <button class="button button-default button-lg btn-submit">提交</button>
+            </p>
+        </div>
+    </div>
+   
+</body>
+
+</html>

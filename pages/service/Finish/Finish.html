@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>完工</title>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/common.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../../../static/styles/service/dispatch.css"/>-->
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/service/Finish.css"/>
+	</head>
+	<body>
+		<div class="box" id="boxs">
+			<p class="color-aaa ulev-3 uinn">维修诊断</p>
+			<div class="content uinn">
+				<div class="clearfix ulev-3 con connn">
+					<span class="ufl">故障类型</span>
+					<!--<span class="ufr border2">间接性故障</span>
+					<span class="ufr color border1">突发性故障</span>-->
+				</div>
+				<div class="clearfix ulev-3 cont">
+					<span class="ufl">维修项目</span>
+					<span class="ufr" id="project">维修项目<b><img src="../../../static/images/icon_back_b.png"/></b></span>
+				</div>
+				<textarea name="" rows="" cols="" placeholder="描述设备故障的情况"></textarea>
+				
+				<div class="cont ub cont_remove">
+					<div class="cont1">
+						<img class="img1" src="../../../static/images/smbx_audio.png"/>
+						<img class="img2 img2_remove" src="../../../static/images/icon_close.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" src="../../../static/images/smbx_photograph.png"/>
+						<img class="img2 img2_remove" src="../../../static/images/icon_close.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" src="../../../static/images/smbx_photo.png"/>
+						<img class="img2 img2_remove" src="../../../static/images/icon_close.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" src="../../../static/images/smbx_video.png"/>
+						<img class="img2 img2_remove" src="../../../static/images/icon_close.png"/>
+					</div>
+				</div>
+				
+				<div class="cont ub">
+					<div class="cont1">
+						<img class="img1" id="img1" src="../../../static/images/smbx_audio.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" id="img2" src="../../../static/images/smbx_photograph.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" id="img3" src="../../../static/images/smbx_photo.png"/>
+					</div>
+					<div class="cont1">
+						<img class="img1" id="img4" src="../../../static/images/smbx_video.png"/>
+					</div>
+				</div>
+				
+				<!--<div class="clearfix ulev-3 con connn">-->
+					<!--<span class="ufl">紧急程度</span>
+					<span class="ufr border2">特急</span>
+					<span class="ufr border2">紧急</span>
+					<span class="ufr color border1">一般</span>-->
+				<!--</div>-->
+				
+			</div>
+			<p class="color-aaa ulev-3 uinn">费用及用料</p>
+			
+			<div class="content uinn">
+				<div class="clearfix ulev-3 con">
+					<span class="ufl">维修费用</span>
+					<span class="ufr padding-r"><input type="number" step="0.01" name="" id="weixiusum" value="" placeholder="请输入维修金额"/></span>					
+				</div>
+				<div class="clearfix ulev-3 cont">
+					<span class="ufl">维修用料</span>
+					<span class="ufr" id="materials">0元  <b><img src="../../../static/images/icon_back_b.png"/></b></span>
+				</div>
+				
+			</div>
+			<p class="color-aaa ulev-3 uinn">维修设备</p>
+			
+			<div class="content uinn">
+				<div class="clearfix ulev-3 con">
+					<span class="ufl">报修设备</span>
+					<span class="ufr color padding-r" id="equipment">添加设备</span>					
+				</div>
+				<div class="clearfix ulev-3 cont">
+					<span class="ufl">报修型号</span>
+					<span class="ufr color-aaa">RW 120W</span>
+				</div>
+				
+			</div>
+			<p class="color-aaa ulev-3 uinn">签字确认</p>
+			
+			<div class="content uinn">
+				<div class="clearfix ulev-3 con noborderbottom">
+					<span class="ufl">院方签字</span>
+					<span class="ufr color" id="again">重签</span>
+					<canvas id="mycanvas" width="300" height="300">
+		
+					</canvas>
+					<img id="canvas_img" src=""/>
+				</div>
+				<div></div>
+			</div>
+			<button class="bg-6494f6 ulev-2" id="btns">提交</button>
+			
+		
+			
+			<div class="contentt0">
+				<div class="box">
+					<!--<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+					</div>-->
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">灯具</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>
+						<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">水电</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 btn_solve">取消</button>
+				</div>
+				
+				
+				<div class="box display_none">
+					<!--<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+					</div>-->
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">1号灯坏了</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">2号灯坏了</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">3号灯坏了</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">4号灯坏了</span>
+		
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 sub_btn">提交</button>
+				</div>
+				
+			</div>
+			
+			
+			
+			
+			
+			<div class="contentt">
+				<div class="box">
+					<!--<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+					</div>-->
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">1号门诊楼</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>
+						<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">2号住院楼</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 btn_solve">取消</button>
+				</div>
+				
+				<div class="box display_none">
+					<!--<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入楼层"/>
+					</div>-->
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">1层</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>
+						<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">2层</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 btn_solve">取消</button>
+				</div>
+				
+				<div class="box display_none">
+					<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入房间"/>
+					</div>
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">101</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>
+						<div class="clearfix ulev-2 con uinn">
+							<span class="ufl">102</span>
+							<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 btn_solve">取消</button>
+				</div>
+				
+				<div class="box display_none">
+					<div class="search uinn ub">
+						<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+						<input type="text" name="" id="" value="" placeholder="请输入设备"/>
+					</div>
+					<div class="content">
+						<!--<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">1号灯</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">2号灯</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">3号灯</span>
+		
+						</div>
+						<div class="clearfix ulev-2 con uinn con22">
+							<span class="ufl con22_img"><img src="../../../static/images/icon_dh_l.png"/></span>
+							<span class="ufl">4号灯</span>
+		
+						</div>-->
+					</div>
+					<button class="bg-6494f6 ulev-2 sub_btn">提交</button>
+				</div>
+				
+			</div>
+			
+			
+			<div class="contentt2">
+				<div class="box">
+					<div class="content contentt21">
+						<!--<p class="bg-eee jiange"></p>
+						<div class="content2">
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">领料单号</span>
+								<span class="ufr color-aaa cutText-2">LY20140526225</span>
+							</div>
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">物料名称</span>
+								<span class="ufr color-aaa cutText-2">灯管</span>
+							</div>
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">物料品牌</span>
+								<span class="ufr color-aaa cutText-2">飞利浦</span>
+							</div>
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">规格型号</span>
+								<span class="ufr color-aaa cutText-2">RW122212</span>
+							</div>
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">物料数量</span>
+								<span class="ufr color-aaa cutText-2">2只</span>
+							</div>
+							<div class="cont3 clearfix ulev-3">
+								<span class="ufl">物料金额</span>
+								<span class="ufr color-aaa cutText-2">12元</span>
+							</div>
+						</div>-->
+					</div>
+					<div class="buttons"></div>
+					<button id="btn1" class="bg-6494f6 ulev-2">添加</button>
+					<button class="ulev-2 btn1_remove">完成</button>
+					
+					
+					
+					<div class="content0 content010">
+						<!--<div class="search uinn ub">
+							<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+							<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+						</div>-->
+						<div class="content001">
+							<!--<div class="clearfix ulev-2 con uinn content01">
+								<span class="ufl">1号仓库</span>
+								<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+							</div>
+							<div class="clearfix ulev-2 con uinn content01">
+								<span class="ufl">2号仓库</span>
+								<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+							</div>-->
+						</div>
+						
+					</div>
+					
+					<div class="content0 content011">
+						<div class="search uinn ub">
+							<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+							<input type="text" name="" id="" value="" placeholder="请输入物资信息"/>
+						</div>
+						<div class="content001">
+							<!--<div class="clearfix ulev-2 con uinn content01">
+								<span class="ufl">1号设备</span>
+								<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+							</div>
+							<div class="clearfix ulev-2 con uinn content01">
+								<span class="ufl">2号设备</span>
+								<span class="ufr"><img src="../../../static/images/icon_back_b.png"/></span>
+							</div>-->
+						</div>
+					</div>
+					
+					
+					
+					<div class="content1">
+						<!--<div class="search uinn ub">
+							<span><img src="../../../static/images/icon_fangdajing.png"/></span>
+							<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+						</div>-->
+						<div class="content11">
+							<div class="content2">
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">名称</span>
+									<span class="ufr color-aaa cutText-2 name">名称</span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">品牌</span>
+									<span class="ufr color-aaa cutText-2 brand">品牌</span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">规格</span>
+									<span class="ufr color-aaa cutText-2 model">规格</span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">单价</span>
+									<span class="ufr color-aaa cutText-2 avgPrice">单价</span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">仓库</span>
+									<span class="ufr color-aaa cutText-2 whName">仓库</span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">库存</span>
+									<span class="ufr color-aaa cutText-2 qty">库存</span>
+								</div>
+							</div>
+							<p class="bg-eee jiange"></p>
+							<div class="content2">
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">物料数量</span>
+									<span class="ufr jia"><img src="../../../static/images/icon_jiahao.png"/></span>
+									<span class="ufr number">1</span>
+									<span class="ufr jian"><img src="../../../static/images/icon_jianhao_jinzi.png"/></span>
+								</div>
+								<div class="cont3 clearfix ulev-3">
+									<span class="ufl">物料金额</span>
+									<span class="ufr color-aaa cutText-2 sum">0元</span>
+								</div>
+							</div>
+						</div>
+						<button id="btn2" class="bg-6494f6 ulev-2 btn2_sub">提交</button>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+		</div>		
+		
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/service/finish.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		
+		
+	</script>
+</html>

@@ -1,0 +1,135 @@
+.box{
+	width: 100%;
+	min-height: 100%;
+	box-sizing: border-box;
+}
+.head{
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	z-index: 99;
+	border-bottom: 1px solid gainsboro;
+}
+.head span{
+	display: block;
+	width: 25%;
+	line-height: 2.5rem;
+}
+.marigntop{
+	margin-top: 2.6rem;
+}
+
+.content{
+	/*margin-top: 0.5rem;*/
+	border-top: 1px solid gainsboro;
+}
+.content ul{
+	/*border-top: 0.5rem solid #EEEEEE;*/
+}
+.content li{
+	border-bottom: 0.5rem solid #EEEEEE;
+	background-color: white;
+}
+
+.cont1{
+	line-height: 1.1rem;
+}
+.cont1 img{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.3rem;
+}
+.cont1 b{
+	color: #ff8a01;
+	margin: 0 5px;
+}
+
+.cont>span{
+	display: block;
+	line-height: 1rem;
+	font-size: 0.7rem;
+}
+.cont11{
+	width: calc(100% - 8rem);
+}
+.cont12{
+	width: calc(100% - 4rem);
+}
+.span1{
+	width: 4rem;
+	position: relative;
+}
+.span1 img{
+	width: 100%;
+	position: absolute;
+	top: -0.5rem;
+	left: 0;
+}
+.span2{
+	width: 4rem;
+	color: #666666;
+}
+
+
+.conb{
+	margin-top: 1rem;
+}
+.conb div>img{
+	width: 4rem;
+	height: 4rem;
+}
+.conb div>p{
+	line-height: 1rem;
+}
+.conb div>p:nth-child(2){
+	font-weight: bold;
+}
+.conb div>p:nth-child(1){
+	padding-left: 0.3rem;
+}
+.conb div>p.margintop{
+	margin-top: 0.5rem;
+}
+.conb div>p.margintop2{
+	margin-top: 0.2rem;
+}
+
+.conb2{
+	width: calc(100% - 4.5rem);
+	margin-left: 0.5rem;
+}
+
+.con2{
+	margin-top: 0.5rem;
+}
+
+.con2 button{
+	width: 3.75rem;
+	height: 1.4rem;
+	line-height: 1.45rem;
+	background-color: white;
+	/*padding: 8px 0.8rem;*/
+	margin: 0 4px;
+	margin-top: 0.3rem;
+	outline: none;
+	border: 1px solid gainsboro;
+	border-radius: 4px;
+	font-size: 0.65rem;
+}
+.con2 button:last-child{
+	background-color: #6494f6;
+	color: white;
+	border: none;
+}
+
+.con2 .marginright,{
+	margin-right: 0.2rem;
+	font-weight: 400;
+}
+.con2 .marginright b{
+	font-weight: 400;
+}

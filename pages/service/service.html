@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>维修工单</title>
+		<link rel="stylesheet" type="text/css" href="../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../static/styles/service/service.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="head ub ulev-25 tx-c uinn1">
+				<span class="border-bottom color">待派工(<b>0</b>)</span>
+				<span>待接单(<b>0</b>)</span>
+				<span>维修中(<b>0</b>)</span>
+				<span>已完工(<b>0</b>)</span>
+			</div>
+			
+			<div class="content marigntop">
+				<ul>
+					<!--<li>
+						<div class="con">
+							<div class="ub cont">
+								<div class="ub cont1 cont11"><img src="../../static/images/icon_wjx_h.png"/><span class="ulev-2">已等待<b>30</b>分钟</span></div>
+								<span class="span1 color-red tx-c">已超时</span>
+								<span class="span2 color-red tx-c">特急</span>
+							</div>
+							<div class="ub conb ulev-4">
+								<div><img src="../../static/images/img_shui.png"/></div>
+								<div class="conb2">
+									<p class="cutText">17-08-25 16:25:30</p>
+									<p class="cutText">【水】 水漏了</p>
+									<p class="cutText-2">【门诊科】质子重离子治疗区门诊楼3层楼护士台04室张海客（13788899966）</p>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix con2">
+							<button class="ufr">转单</button>
+							<button class="ufr">接单</button>
+						</div>
+					</li>
+					
+					
+					<li>
+						<div class="con">
+							<div class="ub cont">
+								<div class="ub cont1 cont12"><img src="../../static/images/icon_wjx_h.png"/><span class="ulev-2">已等待<b>30</b>分钟</span></div>
+								<span class="span1 color-red tx-c">已超时</span>
+								<span class="span2 color-yellow tx-c">紧急</span>
+							</div>
+							<div class="ub conb ulev-4">
+								<div><img src="../../static/images/img_dian.png"/></div>
+								<div class="conb2">
+									<p class="cutText">17-08-25 16:25:30</p>
+									<p class="cutText">【水】 水漏了</p>
+									<p class="cutText-2">【门诊科】质子重离子治疗区门诊楼3层楼护士台04室张海客（13788899966）</p>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix con2">
+							<button class="ufr">转单</button>
+							<button class="ufr">接单</button>
+						</div>
+					</li>
+					
+					<li>
+						<div class="con">
+							<div class="ub cont">
+								<div class="ub cont1 cont12"><img src="../../static/images/icon_wjx_h.png"/><span class="ulev-2">已等待<b>30</b>分钟</span></div>
+								<span class="span2 tx-c">一般</span>
+							</div>
+							<div class="ub conb ulev-4">
+								<div><img src="../../static/images/img_kongtiao.png"/></div>
+								<div class="conb2">
+									<p class="cutText">17-08-25 16:25:30</p>
+									<p class="cutText">【水】 水漏了</p>
+									<p class="cutText-2">【门诊科】质子重离子治疗区门诊楼3层楼护士台04室张海客（13788899966）</p>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix con2">
+							<button class="ufr">转单</button>
+							<button class="ufr">接单</button>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		
+		function serviceNum() {
+			$.ajax({
+				url: ias.api.serviceNum
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,success:function(data) {
+					if(data.status == 200) {
+//						console.log(data.results)
+						if(data.results){
+							$(".head>span>b").eq(0).html(data.results.waitDispatchNum)
+							$(".head>span>b").eq(1).html(data.results.waitAcceptNum)
+							$(".head>span>b").eq(2).html(data.results.inServiceNum)
+							$(".head>span>b").eq(3).html(data.results.completeNum)
+						}
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		serviceNum()
+	
+		function service(url) {
+			$.ajax({
+				type:"get",
+				url:url,
+				async:true,
+				success:function(data) {
+					$(".content").html(data)
+				},
+				error:function(data){
+					
+				}
+			});
+		}
+		
+		service("service_p.html")
+		
+		
+		$(".head span").click(function() {
+			var index=$(this).index();
+			$(".head span").removeClass("border-bottom color")
+			$(this).addClass("border-bottom color")
+			switch(index){
+				case 0: 
+					service("service_p.html")
+					break; 
+				case 1: 
+					service("service_d.html")	
+					break; 
+				case 2: 
+					service("service_wx.html")
+					break; 
+				case 3: 
+					service("service_wg.html")
+					break; 
+			}
+		})
+		
+		
+		$(".content").on("click","li .conb",function() {
+			var type=$(".content ul").attr("id")
+			var iid=$(this).parents("li").attr("iid")
+			var orderId=$(this).parents("li").attr("orderId")
+			var repiarno=$(this).parents("li").attr("repiarno")
+			var status=$(this).parents("li").attr("status")
+			var dispatchno
+			if (type != "service_p") {
+				dispatchno=$(this).parents("li").attr("dispatchno")
+			}
+			localStorage.setItem("type",type)
+			localStorage.setItem("iid",iid)
+			localStorage.setItem("orderId",orderId)
+			localStorage.setItem("repiarno",repiarno)
+			localStorage.setItem("dispatchNo",dispatchno)
+			
+			localStorage.setItem("status",status)
+			switch(type){
+				case "service_p": 
+					window.location="service_detail/service_detail.html"
+					break; 
+				case "service_d": 
+					window.location="service_detail/service_detail.html"
+					break; 
+				case "service_wx": 
+					window.location="service_detail/service_detail.html"
+					break; 
+				case "service_wg": 
+					window.location="service_detail/service_detail.html"
+					break; 
+			}
+		})
+		
+		var btn_sub
+		$(".content").on("click","li .con2 button",function(e) {
+			e.stopPropagation()
+			btn_sub=$(this)
+			var type=$(this).text()
+			var iid=$(this).parents("li").attr("iid")
+			var dispatchNo=$(this).parents("li").attr("dispatchNo")
+			
+			localStorage.setItem("iid",iid)
+			localStorage.setItem("types","1")
+			localStorage.setItem("dispatchNo",dispatchNo)
+			
+			switch(type){
+				case "派工": 
+					window.location="Dispatch/Dispatch.html"
+					break; 
+				case "接单": 
+//					window.location=""
+//					alert("接单成功")
+					jiedan(iid)
+					break; 
+				case "转单": 
+					window.location="Turnsingle/Turnsingle.html"
+					break; 
+				case "挂单": 
+					window.location="Guadan/Guadan.html"
+					break; 
+				case "完工": 
+					window.location="Finish/Finish.html"
+					break;
+				case "继续维修": 
+//					window.location=""
+//					alert("继续维修成功")
+					continue_repair(iid)
+					break;
+			}
+		})
+		
+		function jiedan(iid) {
+			$.ajax({
+				url: ias.api.serviceAccept
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"serviceId": iid
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+//						alert("成功");
+						btn_sub.parents("li").remove()
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		
+		function continue_repair(iid) {
+			$.ajax({
+				url: ias.api.serviceJoin
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"serviceId":iid
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+//						alert("成功");
+						btn_sub.html("完工")
+						btn_sub.before('<button class="ufr">挂单</button>')
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		
+		
+	})	
+	</script>
+	
+</html>

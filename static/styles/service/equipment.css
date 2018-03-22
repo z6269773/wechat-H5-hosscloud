@@ -1,0 +1,49 @@
+.box{
+	width: 100%;
+	min-height: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-color: #EEEEEE;
+	padding-top: 0.5rem;
+}
+
+.search{
+	width: calc(94% - 1rem);
+	height: 1rem;
+	margin: auto;
+	margin-bottom: 0.5rem;
+	border-radius: 0.3rem;
+	border: 1px solid gainsboro;
+	background-color: white;
+}
+
+.search span img{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+.search input{
+	width: 90%;
+	height: 1.2rem;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	border: none;
+	outline: none;
+	margin-left: 0.5rem;
+}
+
+
+
+.con{
+	background-color: white;
+}
+
+.con span{
+	line-height: 1rem;
+}
+
+.con span>img{
+	width: 1rem;
+	height: 1rem;
+}

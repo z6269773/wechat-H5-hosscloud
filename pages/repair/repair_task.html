@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>报修任务</title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/common.css?v=1.32" />
+    <link rel="stylesheet" type="text/css" href="../../static/styles/service/service.css?v=1.32" />
+
+    <link rel="stylesheet" type="text/css" href="../../static/styles/repair/select_list.css?v=1.3333" />
+
+    <!-- 上传图片css -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/repair/diyupload.css" />
+    <!-- 公共js -->
+    <script src="../../static/script/jquery.min.js?v=1.91" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/api/api.js"></script>
+    <!-- fundebug -->
+    <script src="https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js" apikey="5785d9db5937716cf70e5b2c99587d65669c4b576b158e793cec2b909ca0d320"></script>
+
+    <script src="../../static/script/repair/tab-a4e854ba05.js"></script>
+  
+    <!-- 上传图片 -->
+    <script src="../../static/script/repair/webuploader-46af8f9ee4.min.js?v=1.30"></script>
+    <script src="../../static/script/repair/diyupload-2ca6b20702.js?v=1.30"></script>
+    <!-- 自定义js -->
+    <script src="../../static/script/repair/main-830850dc15.js"></script>
+    <script src="../../static/script/repair/repair_task-81997c9b56.js?v=1.31"></script>
+</head>
+
+<body>
+    
+
+    <div class="box ios-content">
+        <div class="">
+            <ul>
+                <li class="card">
+                    <div class="card-items card-items-long">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修位置</span>
+                            <div class="items-lable">
+                                <i class="fa fa-angle-right"></i>
+                                 <span id="installationPosition" class="ufr"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items" style="border-bottom:none;">
+                        <a href="#none" class="pay-method-con" id="equipment">
+                            <span class="items-title ufl">报修项目</span>
+                            <div class="items-icon ufr" >
+                                <span id="equipmentLable"></span>
+                                <input type="hidden" name="typeId" value="" />
+                                <i class="icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="evaluate-center" style="padding-top:0">
+                        <textarea name="descs" id=" " placeholder="描述设备故障情况"></textarea>
+                    </p>
+                    <p class="evaluate-center">
+                       
+                    </p>
+                    <p class="evaluate-center">
+                        <div style="padding: 0 10px;">
+                            <ul class="upload-ul clearfix">
+                                <li class="upload-pick">
+                                    <div class="webuploader-container clearfix" id="goodsUpload"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <img id="audio" src="../../static/images/smbx_audio.png">
+                        <img id="photograph" src="../../static/images/smbx_photograph.png">
+                        <img id="photo" src="../../static/images/smbx_photo.png">
+                        <img id="video" src="../../static/images/smbx_video.png"> -->
+                    </p>
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">紧急程度</span>
+                            <div class="items-lable ufr" id="repairLevel">
+                                 <!-- 紧急程度-->
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修设备</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                            <span id="name"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修型号</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                            <span id="model"></span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <!-- content end -->
+            <p class="content-center">
+                <a href="javascript:void(0)">
+                    <button class="button button-default button-lg btn-submit">提交</button>
+                </a>
+            </p>
+        </div>
+
+        <!-- chengjian.jiang -->
+        <!--  报修大类 -->
+        <div class="contentt0">
+            <div class="box">
+                <div class="content content-p">
+                    <!-- 报修大类 -->
+
+                </div>
+                <!-- content end -->
+                <p class="content-center">
+                    <button class="button button-default button-lg btn_solve">取消</button>
+                </p>
+            </div>
+
+            <div class="box display_none">
+                <div class="content content-c">
+                     <!-- 报修小类 -->
+                </div>
+                <!-- content end -->
+                <p class="content-center">
+                    <button class="button button-default button-lg sub_btn">提交</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

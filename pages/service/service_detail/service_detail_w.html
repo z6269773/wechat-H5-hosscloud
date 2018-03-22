@@ -1,0 +1,168 @@
+<p class="bg-eee jiange"></p>
+<div class="content2">
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修单号</span>
+		<span id="repairNo" class="ufr color-aaa cutText-2"></span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修状态</span>
+		<span id="repairStatusName" class="ufr cutText-2"></span>
+	</div>
+</div>
+<!--<p class="bg-eee jiange"></p>
+<div class="content2">
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">派工单号</span>
+		<span class="ufr color-aaa cutText-2">PG20140526225</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修项目</span>
+		<span class="ufr color-aaa cutText-2">【灯具】镇流器坏了</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修说明</span>
+		<span class="ufr color-aaa cutText-2">门诊楼3层护士台</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修费用</span>
+		<span class="ufr color-aaa cutText-2">10元</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">派工时间</span>
+		<span class="ufr color-aaa cutText-2">2017-12-12 13:12:12</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">接单时间</span>
+		<span class="ufr color-aaa cutText-2">2017-12-12 13:12:12</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">完工时间</span>
+		<span class="ufr color-aaa cutText-2">2017-12-12 13:12:12</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修人员</span>
+		<span class="ufr color-aaa cutText-2">张三</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修附件</span>
+	</div>
+	<div class="cont3 clearfix ulev-3 uinn1">
+		<img class="ufl" src="../../../static/images/img_1.png"/>
+		<img class="ufl" src="../../../static/images/img_2.png"/>
+		<img class="ufl" src="../../../static/images/img_3.png"/>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">维修设备</span>
+		<span class="ufr color-aaa cutText-2">1号灯（2角 21W）</span>
+	</div>
+	<div class="cont3 clearfix ulev-3 materials">
+		<span class="ufl">工单用料</span>
+		<span class="ufr color-aaa cutText-2">22元  ></span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">院方签字</span>
+		<span class="ufr color-aaa cutText-2"><img class="qianzi" src="../../../static/images/icon_ok.png"/></span>
+	</div>
+</div>-->
+
+<script type="text/javascript">
+	$(".info").on("click",".materials",function() {
+		var idd=$(this).parents(".content2").attr("idd")
+		var dispatchNo=$(this).parents(".content2").attr("dispatchNo")
+		window.location="materials.html?idd="+idd+"&dispatchNo="+dispatchNo
+	})
+	
+	$(function() {
+		$("#repairNo").text($(".info").attr("repairNo"))
+		$("#repairStatusName").text($(".info").attr("repairStatusName"))
+		
+		$.ajax({
+			url: ias.api.serviceDetail
+			,contentType : "application/json"
+            ,dataType : "json"
+			,method:"post"
+			,data: JSON.stringify({
+				"repiarNo":$(".info").attr("repairNo")
+//				"repiarNo":"WX201712120003"
+			}).encode()
+			,success:function(data) {
+				if(data.status == 200) {
+					console.log(data.results);
+					if (data.results.length>0) {
+						var list=""
+						$(data.results).each(function(i,e) {
+							
+							var uploadList=""
+							$(e.uploadList).each(function(x,y) {
+								uploadList+=''
+							})
+							
+							
+							list+='<p class="bg-eee jiange"></p>'
+									+'<div class="content2" idd="'+e.id+'" dispatchNo="'+e.dispatchNo+'">'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">派工单号</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.dispatchNo+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">维修项目</span>'
+											+'<span class="ufr color-aaa cutText-2 lineheight">'+e.projectName+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">维修说明</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.descs+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">维修费用</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.repiarPrice+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">派工时间</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.createDt+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">接单时间</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.acceptTime+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">完工时间</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.completeTime+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">维修人员</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.worker+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3 noborderbottom">'
+											+'<span class="ufl">维修附件</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3 uinn1">'
+											+uploadList
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">维修设备</span>'
+											+'<span class="ufr color-aaa cutText-2">'+e.macName+'</span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3 materials">'
+											+'<span class="ufl">工单用料</span>'
+											+'<span class="ufr color-666 cutText-2">'+e.repiarPrice+'<b><img src="../../../static/images/icon_back_b.png"/></b></span>'
+										+'</div>'
+										+'<div class="cont3 clearfix ulev-3">'
+											+'<span class="ufl">院方签字</span>'
+											+'<span class="ufr color-aaa cutText-2"><img class="qianzi" src="'+e.signUrl+'"/></span>'
+										+'</div>'
+									+'</div>'
+						})
+						$(".content2").after(list)
+					}
+				} else {
+					alert(data.message);
+				}
+			}
+		});
+		
+		
+		
+	})
+	
+	
+</script>

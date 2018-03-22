@@ -1,0 +1,257 @@
+<div class="content uinn1">
+	<div class="ub cont">
+		<div class="ub cont1 cont12"><img src="../../../static/images/icon_shijian.png"/><span class="ulev-3">已经等待<b id="waitTime">20</b></span></div>
+		<!--<span class="span1 tx-c"><img src="../../../static/images/img_cs.png"/></span>-->
+		<!--<span class="span2 color-red tx-c">特急</span>-->
+	</div>
+    <div class="cont2">
+    	<!--<img src="../../../static/images/images/liushui_03.png"/>-->
+    	<!-- Swiper -->
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		      	<!--<div class="swiper-slide">
+		      		<img src="../../../static/images/images/liushui_03.png"/>
+		      	</div>
+		      	<div class="swiper-slide">
+		      		<img src="../../../static/images/yinpin.png"/>
+		      		<div class="play">
+		      			<img class="imgs1 imgs21 center_center" src="../../../static/images/yybx_play.png"/>
+		      		</div>
+		      	</div>
+		      	<div class="swiper-slide">
+		      		<img src="../../../static/images/img_shipin-ys.png"/>
+		      		<div class="play">
+		      			<img class="imgs1 imgs22 center_center" src="../../../static/images/yybx_play.png"/>
+		      		</div>
+		      	</div>-->
+		    </div>
+		    <!-- Add Pagination -->
+		    <div class="swiper-pagination"></div>
+		</div>
+    </div>
+</div>
+<div class="content2">
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修时间</span>
+		<span class="ufr color-aaa cutText-2">2017-05-12 13:55:22</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修单号</span>
+		<span class="ufr color-aaa cutText-2">BX20171202006</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修项目</span>
+		<span class="ufr color-aaa cutText-2">【灯具】镇流器坏掉了</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">故障描述</span>
+		<span class="ufr color-aaa cutText-2">【灯具】镇流器坏掉了</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修位置</span>
+		<span class="ufr color-aaa cutText-2">门诊楼三楼护士台</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修人员</span>
+		<span class="ufr color-aaa cutText-2">张凯  13224569873</span>
+	</div>
+</div>
+
+<p class="bg-eee jiange"></p>
+
+<div class="content2">
+	<!--<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修附件</span>
+	</div>
+	
+	<div class="cont4 clearfix ulev-3 uinn1">
+		<audio id="audio" src="../../../static/audio/8868.mp3"></audio>
+		<span class="ufl"><img src="../../../static/images/images/audio_03.png"/></span>
+		<span class="ufr color-aaa cutText-2">语音 15.33"</span>
+	</div>-->
+	
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修设备</span>
+		<span class="ufr color-aaa cutText-2">日光灯</span>
+	</div>
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">报修型号</span>
+		<span class="ufr color-aaa cutText-2">RW120W</span>
+	</div>
+</div>
+
+<p class="bg-eee jiange"></p>
+
+<div class="content2">
+	<div class="cont3 clearfix ulev-3">
+		<span class="ufl">当前状态</span>
+		<span class="ufr color-aaa cutText-2">待派工</span>
+	</div>
+</div>
+
+
+<div class="content3">
+	<!--<button class="bg-6494f6 ulev0 btn11">派工</button>
+	<button class="bg-6494f6 ulev0 btn12">接单</button>
+	<button class="bg-6494f6 ulev0 btn12">转单</button>
+	<button class="bg-6494f6 ulev0 btn12">完工</button>
+	<button class="bg-6494f6 ulev0 btn12">挂单</button>
+	<button class="bg-6494f6 ulev0 btn12">继续维修</button>-->
+</div>
+
+
+
+<div class="audio">
+	<img class="remove_media" src="../../../static/images/icon_shipin.png"/>
+	<audio class="center_center" id="audio" src="../../../static/audio/8868.mp3" controls="controls" ></audio>
+</div>
+
+<div class="video">
+	<img class="remove_media" src="../../../static/images/icon_shipin.png"/>
+	<video class="center_center" id="video" controls="controls" src="../../../static/shiping/12.mp4" controlsList="nodownload"></video>
+</div>
+
+<div class="maximg">
+	<img class="remove_media" src="../../../static/images/icon_shipin.png"/>
+	<img class="upimg" src=""/>
+</div>
+
+<script type="text/javascript">
+	var status = localStorage.getItem('status')
+	
+	var iid = localStorage.getItem('iid')
+	var types = localStorage.getItem('type')
+	var orderId = localStorage.getItem('orderId')
+	
+	
+	var list1='<button class="bg-6494f6 ulev-2 btn11">派工</button>'
+	var list2='<button class="bg-6494f6 ulev-2 btn12">接单</button><button class="bg-6494f6 ulev-2 btn12">转单</button>'
+	var list3='<button class="bg-6494f6 ulev-2 btn13">完工</button><button class="bg-6494f6 ulev-2 btn13">挂单</button><button class="bg-6494f6 ulev-2 btn13">转单</button>'
+	var list4='<button class="bg-6494f6 ulev-2 btn12">继续维修</button><button class="bg-6494f6 ulev-2 btn12">转单</button>'
+	switch(types){
+		case "service_p": 
+			$(".content3").html(list1)
+			break; 
+		case "service_d": 
+			$(".content3").html(list2)
+			break; 
+		case "service_wx": 
+			if (status == 4) {
+				$(".content3").html(list4)
+			}else{
+				$(".content3").html(list3)
+			}
+			
+			break; 
+		case "service_wg": 
+			$(".content3").html('')
+			break; 
+	}
+	
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+        paginationClickable: true,
+        loop: true,
+//      autoplay: 2000,
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+		observeParents:true,//修改swiper的父元素时，自动初始化swiper
+    });
+    
+//  console.log(iid,orderId)
+    $.ajax({
+		url: ias.api.repiarDetail
+		,contentType : "application/json"
+        ,dataType : "json"
+		,method:"post"
+		,data: JSON.stringify({
+			"orderId":orderId
+		}).encode()
+		,success:function(data) {
+			if(data.status == 200) {
+				console.log(data.results);
+				if (data.results) {
+					localStorage.setItem("evaluate",data.results.status)
+					$(".info").attr("repairNo",data.results.repairNo)
+					$(".info").attr("repairStatusName",data.results.repairStatusName)
+					
+					var list2
+					if (data.results.lavel == 3) {
+						list2='<span class="span2 color-red tx-c">特急</span>'
+					} else if(data.results.lavel == 2){
+						list2='<span class="span2 color-yellow tx-c">紧急</span>'
+					}else {
+						list2='<span class="span2 tx-c">一般</span>'
+					}
+					
+					$("#waitTime").text(data.results.waitTime)
+					$(".cont").append(list2)
+					$(".cont3 span:last-child").eq(0).text(data.results.createDt)
+					$(".cont3 span:last-child").eq(1).text(data.results.orderNo)
+					$(".cont3 span:last-child").eq(2).text(data.results.projectName)
+					$(".cont3 span:last-child").eq(3).text(data.results.descs)
+					$(".cont3 span:last-child").eq(4).text(data.results.location)
+					$(".cont3 span:last-child").eq(5).text(data.results.userName + data.results.userMobile)
+					$(".cont3 span:last-child").eq(6).text(data.results.macName)
+					$(".cont3 span:last-child").eq(7).text(data.results.modelNum)
+					$(".cont3 span:last-child").eq(8).text(data.results.statusName)
+					
+					var swiperlist=""
+					if(data.results.uploadList){
+						$(data.results.uploadList).each(function(i,e) {
+							if (e.type == "image"){
+								swiperlist+='<div class="swiper-slide">'
+								      		+'<img class="imgs" src="'+e.url+'"/>'
+								      	+'</div>'
+							} else if (e.type == "audio"){
+								swiperlist+='<div class="swiper-slide">'
+								      		+'<img src="../../../static/images/yinpin.png"/>'
+								      		+'<div class="play" srcs="'+e.url+'">'
+								      			+'<img class="imgs1 imgs21 center_center" src="../../../static/images/yybx_play.png"/>'
+								      		+'</div>'
+								      	+'</div>'
+							} else{
+								swiperlist+='<div class="swiper-slide">'
+								      		+'<img src="../../../static/images/img_shipin-ys.png"/>'
+								      		+'<div class="play" srcs="'+e.url+'">'
+								      			+'<img class="imgs1 imgs22 center_center" src="../../../static/images/yybx_play.png"/>'
+								      		+'</div>'
+								      	+'</div>'
+							}
+						})
+						
+						$(".swiper-wrapper").html(swiperlist);
+					}
+					
+				}
+			} else {
+				alert(data.message);
+			}
+		}
+	});
+    
+    
+    
+    
+ 
+    $(".swiper-wrapper").on("click",".play .imgs21",function() {
+    	$(".audio").show()
+    	$("#audio").attr("src",$(this).parents(".play").attr("srcs"))
+    	$("#audio")[0].play()
+    })
+    $(".swiper-wrapper").on("click",".play .imgs22",function() {
+    	$(".video").show()
+    	$("#video").attr("src",$(this).parents(".play").attr("srcs"))
+    	$("#video")[0].play()
+    })
+	$(".swiper-wrapper").on("click",".imgs",function() {
+    	$(".maximg").show()
+    	$(".upimg").attr("src",$(this).attr("src"))
+    })
+	
+	$(".remove_media").click(function() {
+		$(this).parent().hide()
+		$("#audio")[0].pause()
+		$("#video")[0].pause()
+	})
+	
+</script>

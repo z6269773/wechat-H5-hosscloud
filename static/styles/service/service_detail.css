@@ -1,0 +1,401 @@
+.box{
+	width: 100%;
+	min-height: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-color: #EEEEEE;
+}
+
+.head{
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	z-index: 99;
+	/*border-bottom: 1px solid gainsboro;*/
+}
+.head span{
+	display: block;
+	width: 50%;
+	line-height: 2.5rem;
+}
+.marigntop{
+	margin-top: 2.5rem;
+}
+
+
+.content{
+	border-top: 0.4rem solid #EEEEEE;
+	padding-top: 0.3rem;
+	background-color: white;
+}
+/*.content ul{
+	border-top: 1px solid gainsboro;
+}
+.content li{
+	border-bottom: 0.5rem solid gainsboro;
+}*/
+
+.cont1{
+	line-height: 1.1rem;
+}
+.cont1 img{
+	display: block;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.3rem;
+}
+.cont1 b{
+	color: #ff8a01;
+	margin: 0 5px;
+}
+
+.cont>span{
+	display: block;
+	line-height: 1.25rem;
+	font-size: 0.8rem;
+}
+.cont11{
+	width: calc(100% - 6rem);
+}
+.cont12{
+	width: calc(100% - 3rem);
+}
+.span1{
+	width: 4rem;
+	position: relative;
+}
+.span1 img{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.span2{
+	width: 4rem;
+	color: #666666;
+}
+
+
+.cont2{
+	width: 100%;
+	height: 5rem;
+	margin-top: 0.3rem;
+}
+.cont2>img{
+	width: 100%;
+}
+
+
+.content2{
+	border-bottom: 1px solid gainsboro;
+	background-color: white;
+}
+.cont3{
+	width: calc(100% - 0.5rem);
+	margin-left: 0.5rem;
+	padding-right: 0.6rem;
+	line-height: 2.2rem;
+	border-bottom: 1px solid #EEEEEE;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cont3.noborderbottom{
+	border-bottom: none;
+}
+.cont3:last-child{
+	border-bottom: none;
+}
+.cont3 span:last-child{
+	max-width: calc(100% - 5rem);
+}
+.cont3 span:last-child.lineheight{
+	line-height: 1.2rem;
+	margin-top: 0.5rem;
+}
+.materials span:last-child b{
+	position: relative;
+	padding: 0.5rem;
+}
+.materials span:last-child b>img{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 0.5rem;
+	right: 0;
+}
+
+.cont3>img{
+	width: 31%;
+	padding: 0 1%;
+}
+.cont3 .qianzi{
+	display: block;
+	height: 2.2rem;
+}
+
+
+.jiange{
+	height: 0.5rem;
+	border-bottom: 1px solid gainsboro;
+}
+
+.cont4{
+	width: 90%;
+	margin: 0.5rem auto;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	border: 1px solid #EEEEEE;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cont4>span img{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 0.4rem;
+}
+
+
+.content3{
+	margin-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+}
+.content3 .btn11{
+	display: block;
+	width: 92%;
+	margin: auto;
+	outline: none;
+	border: none;
+	color: white;
+	line-height: 2.25rem;
+	letter-spacing: 0.7rem;
+	border-radius: 0.2rem;
+}
+.content3 .btn12{
+	/*display: block;*/
+	width: 44.8%;
+	margin: 0 2px;
+	outline: none;
+	border: none;
+	color: white;
+	line-height: 2.25rem;
+	/*letter-spacing: 0.5rem;*/
+	border-radius: 0.2rem;
+}
+
+.content3 .btn13{
+	/*display: block;*/
+	width: 30%;
+	margin: 0 2px;
+	outline: none;
+	border: none;
+	color: white;
+	line-height: 2.25rem;
+	/*letter-spacing: 0.5rem;*/
+	border-radius: 0.2rem;
+}
+
+
+.content4{
+	width: 100%;
+	padding: 0.7rem 0;
+	background-color: white;
+}
+.ct4{
+	width: 25%;
+	text-align: center;
+	position: relative;
+}
+.ct4 span {
+	line-height: 1rem;
+}
+.ct4 span>img{
+	width: 0.75rem;
+	height: 0.75rem;
+}
+.ct4 p{
+	width: calc(100% - 0.185rem);
+	height: 2px;
+	position: absolute;
+	top: 1.325rem;
+	left: calc(50% + 0.15rem);
+}
+
+
+.content5{
+	width: 100%;
+	padding: 0.7rem 0.5rem;
+	background-color: white;
+}
+.ct5l{
+	width: 10%;
+	text-align: center;
+	position: relative;
+}
+.ct5l img{
+	width: 0.7rem;
+	height: 0.7rem;
+	margin-top: 0.35rem;
+}
+.ct5l p{
+	width: 2px;
+	height: 3rem;
+	position: absolute;
+	top: 1rem;
+	left: calc(50% - 1px);
+}
+
+.ct5r {
+	width: 80%;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid gainsboro;
+}
+.ct5r span {
+	line-height: 1.4rem;
+}
+
+
+
+
+
+
+
+.swiper-container {
+ 	width: 100%;
+    height: 100%;
+ }
+.swiper-slide {
+ 	text-align: center;
+ 	font-size: 18px;
+ 	background: #fff;
+ 	/* Center slide text vertically */
+
+ 	display: -webkit-box;
+ 	display: -ms-flexbox;
+ 	display: -webkit-flex;
+ 	display: flex;
+ 	-webkit-box-pack: center;
+ 	-ms-flex-pack: center;
+ 	-webkit-justify-content: center;
+ 	justify-content: center;
+ 	-webkit-box-align: center;
+ 	-ms-flex-align: center;
+ 	-webkit-align-items: center;
+ 	align-items: center;
+}
+
+.swiper-slide img{
+	width: 100%;
+	max-height: 100%;
+}
+
+.swiper-slide video{
+	width: 100%;
+	max-height: 100%;
+}
+
+.swiper-slide .play{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.swiper-slide .play .imgs1{
+	width: 2rem;
+	height: 2rem;
+}
+
+
+.audio{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: url(../../images/img_yinpin_bg.png) no-repeat;
+	background-size: 100%;
+	z-index: 99;
+	display: none;
+}
+.audio img{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+
+/*audio::-webkit-media-controls-download-button {
+    display:none;
+}
+audio::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+audio::-webkit-media-controls-panel {
+    width: calc(100% + 50px);
+}*/
+
+.video{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	/*background: url(../../images/img_shipin.png) no-repeat;
+	background-size: 100%;*/
+	z-index: 99;
+	display: none;
+}
+.video img{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+.video video{
+	width: 100%;
+}
+
+
+/*video::-webkit-media-controls-download-button {
+    display:none;
+}
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+video::-webkit-media-controls-panel {
+    width: 100%;
+}*/
+
+
+.maximg{
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	z-index: 99;
+	display: none;
+}
+.maximg .remove_media{
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	top: 2rem;
+	left: 2rem;
+}
+.maximg .upimg{
+	max-width: 100%;
+	height: 100%;
+}

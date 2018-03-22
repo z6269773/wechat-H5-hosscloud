@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>报修单详情 </title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/styles/service/service.css" />
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/repair/repair.css" />
+
+    <!-- 公共js -->
+    <script src="../../static/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/api/api.js"></script> 
+    <!-- fundebug -->
+    <script src="https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js" apikey="5785d9db5937716cf70e5b2c99587d65669c4b576b158e793cec2b909ca0d320"></script>
+
+    <!-- 自定义js -->
+    <script src="../../static/script/common.js"></script>
+    <script src="../../static/script/repair/main-830850dc15.js"></script>
+    <script src="../../static/script/repair/b_repair_details-86733056d9.js"></script>
+
+</head>
+
+<body>
+    <div class="box ">
+        <div class="content">
+            <ul>
+                <p class="status">
+                    <!-- 工单轨迹 -->
+                </p>
+                <li class="card">
+                    <div class="con">
+                        <div class="ub cont">
+                            <div class="ub cont1 cont11">
+                                <img src="../../static/images/icon_shijian.png">
+                                <span class="ulev-3">已经等待
+                                    <span class="color-yellow" id="waitTime">  </span>
+                                </span>
+                            </div>
+                            <span class="span1 color-yellow tx-c"></span>
+                            <span class="span1 tx-c ulev-3" id="lavel">  </span>
+                        </div>
+                        <div class="card-img">
+                            <!-- Swiper -->
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                   
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 详情列表 -->
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修时间</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修项目</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items card-items-long">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">故障描述</span>
+                            <div class="items-lable ">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span ufr"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items card-items-long">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修位置</span>
+                            <div class="items-lable">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span ufr"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修人员</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span"></span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修设备</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-items">
+                        <a href="#none" class="pay-method-con">
+                            <span class="items-title ufl">报修型号</span>
+                            <div class="items-lable ufr">
+                                <i class="fa fa-angle-right"></i>
+                                <span class="items-span"></span>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-items">
+                        <a id="repairNo" href="javascript:alert('暂无维修单')"  class="pay-method-con">
+                            <span class="items-title ufl">维修详情</span>
+                            <div class="items-lable items-icon ufr">
+                                <span class="items-span"></span>
+                                <i class="icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- <div class="card-items">
+                        <a href="./time_axis.html" class="pay-method-con">
+                            <span class="items-title ufl">工单轨迹</span>
+                            <div class="items-lable items-icon ufr">
+                                <i class="icon"></i>
+                            </div>
+                        </a>
+                    </div> -->
+                    <div class="card-items">
+                        <a  id="orderId" href="javascript:alert('暂无评价详情')" class="pay-method-con">
+                            <span class="items-title ufl">服务评价</span>
+                            <div class="items-lable items-icon ufr">
+                                <i class="icon"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <!-- content end -->
+            <p class="content-center">
+              
+            </p>
+        </div>
+
+    </div>
+    <!-- audio -->
+    <div class="audio">
+        <img class="remove_media" src="../../static/images/icon_shipin.png" />
+        <audio class="center_center" id="audio" src="" controls="controls" controlsList="nodownload"></audio>
+    </div>
+    <!-- video -->
+    <div class="video">
+        <img class="remove_media" src="../../static/images/icon_shipin.png" />
+        <video class="center_center" id="video" controls="controls" controlsList="nodownload" src=""></video>
+    </div>
+
+</body>
+
+</html>

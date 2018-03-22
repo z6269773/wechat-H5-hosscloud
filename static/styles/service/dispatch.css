@@ -1,0 +1,63 @@
+
+.box{
+	width: 100%;
+	min-height: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-color: #EEEEEE;
+	padding-top: 0.5rem;
+}
+
+.cons{
+	padding-left: 1rem;
+	background-color: white;
+}
+.con{
+	border-bottom: 1px solid #EEEEEE;
+	padding: 0.5rem 0;
+}
+.cons:last-child .con{
+	border-bottom: none;
+}
+
+.con span{
+	line-height: 1rem;
+}
+.con span:first-child{
+	width: 1rem;
+	height: 1rem;
+}
+.con span:nth-child(2){
+	margin-left: 0.5rem;
+}
+
+.cons span>img{
+	width: 1rem;
+	height: 1rem;
+	display: none;
+}
+.cons:first-child span>img{
+	display: block;
+}
+
+
+
+.box button {
+    display: block;
+    width: 92%;
+    margin: auto;
+    margin-top: 1rem;
+    outline: none;
+    border: none;
+    color: white;
+    line-height: 2.25rem;
+	letter-spacing: 0.7rem;
+    border-radius: 0.2rem;
+}
+
+
+
+
+
+
+

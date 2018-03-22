@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>派工</title>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/service/dispatch.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<div class="content">
+				<!--<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">张三（10）</span>
+					<span class="ufr color-ff8a01">4.3</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">李四（10）</span>
+					<span class="ufr color-ff8a01">4.1</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">王大锤（10）</span>
+					<span class="ufr color-ff8a01">4.5</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_dh_l.png"/></span>
+					<span class="ufl">王小锤（10）</span>
+					<span class="ufr color-ff8a01">4.8</span>
+				</div>-->
+			</div>
+			
+			<button class="bg-6494f6 ulev-2">提交</button>
+		</div>
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		
+		var iid = localStorage.getItem('iid')
+		var types = localStorage.getItem('types')
+		
+		$.ajax({
+			url: ias.api.workerList
+			,contentType : "application/json"
+            ,dataType : "json"
+			,method:"post"
+			,data: JSON.stringify({
+				"repairId":iid
+			}).encode()
+			,success:function(data) {
+				if(data.status == 200) {
+//					console.log(data.results);
+					var list=""
+					if (data && data.results.length>0) {
+						$(data.results).each(function(i,e) {
+							list+='<div class="cons">'
+									+'<div class="clearfix ulev-2 con uinn" iid1='+e.id+'>'
+										+'<span class="ufl"><img src="../../../static/images/icon_dh_l.png"/></span>'
+										+'<span class="ufl">'+e.name+'</span>'
+										+'<span class="ufr color-ff8a01"></span>'
+									+'</div>'
+								+'</div>'
+						})
+					}
+					$(".content").html(list)
+					
+				} else {
+					alert(data.message);
+				}
+			}
+		});
+		
+		$(".content").on("click",".con",function() {
+			$(".con span>img").css("display","none")
+			$(this).find("span>img").css("display","block")
+		})
+		$(".box button").click(function() {
+			var str1
+			$($(".con")).each(function() {
+				if ($(this).find("span>img").css("display") == "block") {
+//					console.log($(this).attr("iid1"))
+//					alert("派工成功")
+					str1=$(this).attr("iid1")
+				}
+			})
+			$.ajax({
+				url: ias.api.groupOprate
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"repairId":iid
+					,"employeesId":str1
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+//								alert("成功");
+						if (types == 1) {
+							window.history.go(-1)
+						} else{
+							window.history.go(-2)
+						}
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		})
+	</script>
+</html>

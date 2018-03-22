@@ -1,0 +1,33 @@
+.con {
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #EEEEEE;
+}
+.ulev-3 {
+    font-size: 0.7rem;
+}
+.clearfix {
+    zoom: 1;
+}
+.color {
+    color: #6494f6 !important;
+}
+.con span {
+    display: block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.1rem;
+    line-height: 1rem;
+}
+.con span:nth-child(1) {
+    padding-left: 0;
+}
+#canvas_img {
+    width: 100%;
+    height: 300px;
+    display: none;
+}
+.ufl {
+    float: left !important;
+}
+.ufr {
+    float: right !important;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>转单</title>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../static/styles/service/Turnsingle.css"/>
+	</head>
+	<body>
+		<div class="box">
+			<h1 class="ulev-2 uinn">转单原因</h1>
+			<div class="content">
+				<!--<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_zhuandan.png"/></span>
+					<span class="ufl">时间来不及了</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_zhuandan.png"/></span>
+					<span class="ufl">专业不符合，无法维修</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_zhuandan.png"/></span>
+					<span class="ufl">转派他人</span>
+				</div>
+				<div class="clearfix ulev-2 con uinn">
+					<span class="ufl"><img src="../../../static/images/icon_zhuandan.png"/></span>
+					<span class="ufl">其他</span>
+				</div>-->
+			</div>
+			<div class="content1">
+				<textarea name="" rows="" cols="" placeholder="请输入转单原因"></textarea>
+			</div>
+			
+			
+			<button class="bg-6494f6 ulev-2">提交</button>
+		</div>
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		
+		var iid = localStorage.getItem('iid')
+		var types = localStorage.getItem('types')
+		
+		$.ajax({
+			url: ias.api.turnOnCause
+			,contentType : "application/json"
+            ,dataType : "json"
+			,method:"post"
+			,success:function(data) {
+				if(data.status == 200) {
+					console.log(data.results);
+					var list=""
+					if (data && data.results) {
+						for (var i in data.results) {
+							list+='<div class="clearfix ulev-2 con uinn" index='+i+'>'
+									+'<span class="ufl"><img src="../../../static/images/icon_zhuandan.png"/></span>'
+									+'<span class="ufl">'+data.results[i]+'</span>'
+								+'</div>'
+						}
+					}
+					$(".content").html(list)
+				} else {
+					alert(data.message);
+				}
+			}
+		});
+		
+		
+		$(".content").on("click",".con",function() {
+			$(".con span>img").css("display","none")
+			$(this).find("span>img").css("display","block")
+		})
+		$(".box button").click(function() {
+			var str1,str2
+			$($(".con")).each(function() {
+				if ($(this).find("span>img").css("display") == "block") {
+//					console.log($(this).attr("index"),$(".content1 textarea").val())
+					str1=$(this).attr("index");
+					str2=$(".content1 textarea").val()
+				}
+			})
+			$.ajax({
+				url: ias.api.serviceTurnOn
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"serviceId":iid,
+					"transfer":str1,
+					"content":str2
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+//						alert("成功");
+						if (types == 1) {
+							window.history.go(-1)
+						} else{
+							window.history.go(-2)
+						}
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		})
+	</script>
+</html>

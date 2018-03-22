@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>服务评价</title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../../static/styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../static/styles/service/service.css" />
+
+    <!-- 公共js -->
+    <script src="../../static/script/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../static/script/api/api.js"></script>
+    <!-- fundebug -->
+    <script src="https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js" apikey="5785d9db5937716cf70e5b2c99587d65669c4b576b158e793cec2b909ca0d320"></script>
+
+
+    <script src="../../static/script/repair/main-830850dc15.js"></script>
+    <script src="../../static/script/repair/tab-a4e854ba05.js"></script>
+</head>
+
+<body>
+    <div class="box" style="background:#fff">
+        <div class="">
+            <p class="evaluate-center content-alart">
+                <img src="../../static/images/icon_ok.png">
+                <div class="alert-title">恭喜你，报修成功</div>
+                <div class="alert-lable">正在为您安排维修人员</div>
+            </p>
+            <!-- content end -->
+            <p class="evaluate-center marign-top">
+                <a href="#none" id="getOrderId">
+                    <button class="button button-default button-lg">查看报修</button>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        $.namespace("cloud.alert");
+        cloud.alert = function() {
+            return {
+                 init: function () {
+                    this.getOrderId();
+                },
+                /*
+                * @ 获取保修单id，供保修单详情查询数据使用
+                */
+                getOrderId: function() {
+                    var QueryParams = cloud.main.toQueryParams.call(window.location.href);
+                    $("#getOrderId").attr("href",'./b_repair_details.html?orderId='+QueryParams.orderId)
+                }
+            }
+        }();
+
+       $(document).ready(function () {
+            cloud.alert.init();
+        });
+    </script>
+</body>
+
+</html>

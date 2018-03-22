@@ -1,0 +1,102 @@
+<ul id="service_d">
+	
+</ul>
+
+<script type="text/javascript">
+	
+		var pageNumber=1,pageSize=10;
+		function request(pageNumber,pageSize) {
+			$.ajax({
+				url: ias.api.serviceList+"?pageNumber="+pageNumber+"&pageSize="+pageSize
+				,contentType : "application/json"
+	            ,dataType : "json"
+				,method:"post"
+				,data: JSON.stringify({
+					"status":"0"
+				}).encode()
+				,success:function(data) {
+					if(data.status == 200) {
+						console.log(data.results.rows);
+						if (data && data.results.rows.length>0) {
+							datas(data.results.rows)
+						}
+					} else {
+						alert(data.message);
+					}
+				}
+			});
+		}
+		request(pageNumber,pageSize)
+		
+		function datas(data) {
+			var list=""
+			$(data).each(function(i,e) {
+				var list1=""
+				var list2=""
+				if (e.isTimeout) {
+					list1='<span class="span1 tx-c"><img src="../../static/images/img_cs.png"/></span>'
+				}
+				
+				if (e.lavel == 3) {
+					list2='<span class="span2 color-red tx-c">特急</span>'
+				} else if(e.lavel == 2){
+					list2='<span class="span2 color-yellow tx-c">紧急</span>'
+				}else {
+					list2='<span class="span2 tx-c">一般</span>'
+				}
+				
+				list+='<li class="uinn" iid="'+e.id+'" orderWorker="'+e.orderWorker+'" repiarNo="'+e.repiarNo+'" dispatchNo="'+e.dispatchNo+'" orderId="'+e.orderId+'" status="'+e.status+'">'
+						+'<div class="con">'
+							+'<div class="ub cont">'
+							+'<div class="ub cont1 cont12"><img src="../../static/images/icon_shijian.png"/><span class="ulev-3">已等待<b>'+e.waitTime+'</b></span></div>'
+							+list1	
+							+list2
+							+'</div>'
+							+'<div class="ub conb ulev-4">'
+								+'<div><img src="'+e.repairUrl+'"/></div>'
+								+'<div class="conb2">'
+									+'<p class="cutText color-666">'+e.orderDt+'</p>'
+									+'<p class="cutText ulev-3">'+e.serviceTypeName+'</p>'
+									+'<p class="cutText-2 color-666">【'+e.department+'】'+e.location+'  '+e.userName+e.userMobile+'</p>'
+								+'</div>'
+							+'</div>'
+						+'</div>'
+						+'<div class="clearfix con2">'
+							+'<button class="ufr">转单</button>'
+							+'<button class="ufr">接单</button>'
+						+'</div>'
+					+'</li>'
+			})
+			if (pageNumber == 1) {
+				$("#service_d").html(list)
+			} else{
+				$("#service_d").append(list)
+			}
+			
+		}
+		
+		$(window).scroll(function() {　
+//      	console.log(scrollTop,scrollHeight,windowHeight)
+        	if ((scrollTop >= (scrollHeight - windowHeight -300)) && (end_top <= start_top)) {
+        		pageNumber++
+        		request(pageNumber,pageSize)
+        	}
+        });
+		
+		
+		
+		gundong(shangla,xiala)
+		//下拉执行的函数
+		function xiala() {
+//			alert("下拉刷新");
+			pageNumber=1;
+			request(pageNumber,pageSize)
+		}
+		
+		function shangla() {
+			alert("上拉刷新"); 
+		}
+		
+		
+		
+	</script>

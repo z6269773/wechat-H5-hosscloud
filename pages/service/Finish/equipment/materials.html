@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>用料</title>
+		<link rel="stylesheet" type="text/css" href="../../../../static/styles/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../../static/styles/service/materials.css"/>
+	</head>
+	<body>
+		<div class="box">
+			
+			<div class="content">
+				<p class="bg-eee jiange"></p>
+				<div class="content2">
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">领料单号</span>
+						<span class="ufr color-aaa cutText-2">LY20140526225</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料名称</span>
+						<span class="ufr color-aaa cutText-2">灯管</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料品牌</span>
+						<span class="ufr color-aaa cutText-2">飞利浦</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">规格型号</span>
+						<span class="ufr color-aaa cutText-2">RW122212</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料数量</span>
+						<span class="ufr color-aaa cutText-2">2只</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料金额</span>
+						<span class="ufr color-aaa cutText-2">12元</span>
+					</div>
+				</div>
+				
+				<p class="bg-eee jiange"></p>
+				<div class="content2">
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">领料单号</span>
+						<span class="ufr color-aaa cutText-2">LY20140526225</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料名称</span>
+						<span class="ufr color-aaa cutText-2">灯管</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料品牌</span>
+						<span class="ufr color-aaa cutText-2">飞利浦</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">规格型号</span>
+						<span class="ufr color-aaa cutText-2">RW122212</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料数量</span>
+						<span class="ufr color-aaa cutText-2">2只</span>
+					</div>
+					<div class="cont3 clearfix ulev-3">
+						<span class="ufl">物料金额</span>
+						<span class="ufr color-aaa cutText-2">12元</span>
+					</div>
+				</div>
+				
+			</div>
+			
+			<button id="btn1" class="bg-6494f6 ulev0">添加</button>
+			
+			
+			<div class="content1">
+				<div class="search uinn ub">
+					<span><img src="../../../../static/images/icon_fangdajing.png"/></span>
+					<input type="text" name="" id="" value="" placeholder="请输入楼宇"/>
+				</div>
+				<div class="content11">
+					<div class="content2">
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">领料单号</span>
+							<span class="ufr color-aaa cutText-2 danhao">LY20140526225</span>
+						</div>
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">物料名称</span>
+							<span class="ufr color-aaa cutText-2 name">灯管</span>
+						</div>
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">物料品牌</span>
+							<span class="ufr color-aaa cutText-2 bind">飞利浦</span>
+						</div>
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">规格型号</span>
+							<span class="ufr color-aaa cutText-2 xinghao">RW122212</span>
+						</div>
+					</div>
+					<p class="bg-eee jiange"></p>
+					<div class="content2">
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">物料数量</span>
+							<span class="ufr jia"><img src="../../../../static/images/icon_jiahao.png"/></span>
+							<span class="ufr number">1</span>
+							<span class="ufr jian"><img src="../../../../static/images/icon_jianhao_jinzi.png"/></span>
+						</div>
+						<div class="cont3 clearfix ulev-3">
+							<span class="ufl">物料金额</span>
+							<span class="ufr color-aaa cutText-2 sum">12元</span>
+						</div>
+					</div>
+				</div>
+				
+				<button id="btn2" class="bg-6494f6 ulev0">提交</button>
+			</div>
+			
+			
+			
+		</div>
+	</body>
+	<script src="http://www.fuyitianjian.net/resources/plugins/jQuery/jquery-1.9.1.min.js?version=000000" type="text/javascript"></script>
+	<script src="../../../../static/script/aes/aes.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../static/script/aes/AesUtil.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../../../static/script/aes/pbkdf2.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../../static/script/common.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="../../../../static/script/api/api.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		$("#btn1").click(function() {
+			$(".content1").show()
+//			$(".content11").html("")
+		})
+		$("#btn2").click(function() {
+			$(".content1").hide()
+			
+			var list='<p class="bg-eee jiange"></p>'
+				+'<div class="content2">'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">领料单号</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .danhao").text()+'</span>'
+					+'</div>'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">物料名称</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .name").text()+'</span>'
+					+'</div>'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">物料品牌</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .bind").text()+'</span>'
+					+'</div>'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">规格型号</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .xinghao").text()+'</span>'
+					+'</div>'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">物料数量</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .number").text()+'</span>'
+					+'</div>'
+					+'<div class="cont3 clearfix ulev-3">'
+						+'<span class="ufl">物料金额</span>'
+						+'<span class="ufr color-aaa cutText-2">'+$(".content1 .sum").text()+'</span>'
+					+'</div>'
+				+'</div>'
+				
+			$(".content").append(list)
+			
+		})
+		
+		var price=$(".sum").text().split("元")[0]
+		$(".content2").on("click",".jia",function() {
+			var value=$(".number").text()
+			value++
+			$(".number").text(value)
+			$(".sum").text(price*value+"元")
+			$(".jian img").attr("src","../../../../static/images/icon_jianhao.png")
+		})
+		$(".content2").on("click",".jian",function() {
+			var value=$(".number").text()
+			value--
+			if (value > 1) {
+				$(".number").text(value)
+				$(".sum").text(price*value+"元")
+			}else {
+				$(".number").text(1)
+				$(".sum").text(price*1+"元")
+				$(".jian img").attr("src","../../../../static/images/icon_jianhao_jinzi.png")
+			}
+			
+		})
+	</script>
+</html>

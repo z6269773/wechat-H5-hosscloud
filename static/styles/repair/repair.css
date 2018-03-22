@@ -1,0 +1,174 @@
+/**
+  *  date:2017-12-11
+  *  author:wei.zhao
+  *
+  * */
+
+.content4 {
+    width: 100%;
+    padding: 0.7rem 0;
+    background-color: white;
+}
+
+.ct4 {
+    width: 25%;
+    text-align: center;
+    position: relative;
+}
+
+.ct-cancal {
+    width: 33.33%;
+}
+
+.ct4 span {
+    line-height: 1rem;
+}
+
+.ct4 span>img {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.ct4 p {
+    width: calc(100% - 0.185rem);
+    height: 2px;
+    position: absolute;
+    top: 1.325rem;
+    left: calc(50% + 0.15rem);
+}
+
+.content5 {
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    background-color: white;
+}
+
+.ct5l {
+    width: 10%;
+    text-align: center;
+    position: relative;
+}
+
+.ct5l img {
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-top: 0.35rem;
+}
+
+.ct5l p {
+    width: 2px;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    left: calc(50% - 1px);
+}
+
+.ct5r {
+    width: 80%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid gainsboro;
+}
+
+.ct5r span {
+    line-height: 1.4rem;
+}
+
+
+/* .swiper-container */
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    max-height: 100%;
+}
+
+.swiper-slide video {
+    width: 100%;
+    max-height: 100%;
+}
+
+.swiper-slide .play {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.swiper-slide .play .imgs1 {
+    width: 2rem;
+    height: 2rem;
+}
+
+.audio {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(../../images/img_yinpin_bg.png) no-repeat;
+    background-size: 100%;
+    z-index: 99;
+    display: none;
+}
+
+.audio img {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    /*background: url(../../images/img_shipin.png) no-repeat;
+	background-size: 100%;*/
+    z-index: 99;
+    display: none;
+}
+
+.video img {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.video video {
+    width: 100%;
+}
+
+#lavel span {
+    float: right;
+    margin-right: 6px;
+}

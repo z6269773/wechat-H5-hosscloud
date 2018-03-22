@@ -1,0 +1,726 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 125%;
+    background-color: #EEEEEE;
+}
+
+.box {
+    width: 100%;
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #EEEEEE;
+}
+
+.box.box-conent {
+    width: 100%;
+    min-height: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #EEEEEE;
+    padding-top: 0.5rem;
+}
+
+.ub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: box;
+    position: relative;
+}
+
+.center_center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.hide-input {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #aaa;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #aaa;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #aaa;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+
+/*单行变成省略号*/
+
+.cutText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+
+/*两行变成省略号*/
+
+.cutText-2 {
+    text-overflow: ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/*清除浮动*/
+
+.clearfix {
+    zoom: 1
+}
+
+.clearfix:after {
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    content: "";
+}
+
+
+/*
+ *input框 灰色
+ */
+
+input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #999;
+}
+
+input:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #999;
+}
+
+input::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #999;
+}
+
+input:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color: #999;
+}
+
+
+/**
+ *     改变placeholder样式
+ */
+
+::-webkit-input-placeholder {
+    color: #262626;
+}
+
+*:-moz-placeholder {
+    color: #262626;
+}
+
+*:-ms-input-placeholder {
+    color: #262626;
+}
+
+
+/*浮动方式*/
+
+.ufl {
+    float: left !important;
+}
+
+.ufr {
+    float: right !important;
+}
+
+
+/*字体大小相对于1em=20px*/
+
+.ulev5 {
+    font-size: 1.5rem;
+}
+
+.ulev4 {
+    font-size: 1.4rem;
+}
+
+.ulev3 {
+    font-size: 1.3rem;
+}
+
+.ulev2 {
+    font-size: 1.2rem;
+}
+
+.ulev1 {
+    font-size: 1.1rem;
+}
+
+.ulev0 {
+    font-size: 1.0rem;
+}
+
+.ulev-1 {
+    font-size: 0.9rem;
+}
+
+.ulev-2 {
+    font-size: 0.8rem;
+}
+
+.ulev-25 {
+    font-size: 0.75rem;
+}
+
+.ulev-3 {
+    font-size: 0.7rem;
+}
+
+.ulev-4 {
+    font-size: 0.6rem;
+}
+
+
+/*对齐格式*/
+
+.tx-l {
+    text-align: left;
+}
+
+.tx-r {
+    text-align: right;
+}
+
+.tx-c {
+    text-align: center;
+}
+
+.uinn {
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.uinn0 {
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.uinn1 {
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+.uinn2 {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.uinn3 {
+    padding: 0.2rem;
+    margin: 0;
+}
+
+.uinn4 {
+    padding: 0 0.2rem;
+    margin: 0;
+}
+
+.uinn5 {
+    padding: 0.75rem 0.5rem;
+    margin: 0;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #6494F6;
+}
+
+
+/**
+  *  date:2017-12-7
+  *  author:wei.zhao
+  *
+  * */
+
+.card {
+    font-size: 0.7rem;
+    background-color: #FFF;
+    margin-bottom: 0;
+    border-bottom: 1px solid #DFDFDF !important;
+}
+
+.card .con {
+    padding: 10px;
+}
+
+.card .footer-lable {
+    display: inline-block;
+    font-size: 0.6rem;
+    width: 60px;
+    padding: 8px 14px;
+    color: #aaa;
+}
+
+.card .card-items {
+    line-height: 25px;
+    padding: 10px 10px 10px 0;
+    margin: 0 0 0 15px;
+    color: #333;
+    background: #FFF;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.card .card-items:last-child {
+    border-bottom:none;
+}
+
+.card.card-start .card-items {
+    height: 25px;
+}
+
+.card .card-items.card-items-title {
+    background-color: #EEE;
+    padding: 10px 15px;
+    margin-left: 0
+}
+
+.card .card-items-long .items-title {
+    width: 5rem;
+}
+
+.card .card-items-long .items-lable {
+    width: calc(100% - 5rem);
+}
+
+.card .swiper-slide .play {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/**
+  * 清除浮动 
+  *
+  */
+
+.card .pay-method-con:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.card .pay-method-con {
+    *zoom: 1;
+}
+
+.card .items-icon .icon:after {
+    background: url(../images/icon_back_b.png) no-repeat 0 0 / 100% 100% transparent;
+    content: "";
+    height: 20px;
+    right: 0px;
+    position: absolute;
+    top: 3px;
+    width: 20px;
+}
+
+.card .items-icon .icon-down:after {
+    background: url(../images/icon_back_b.png) no-repeat 0 0 / 100% 100% transparent;
+    content: "";
+    height: 20px;
+    right: 0px;
+    position: absolute;
+    top: 3px;
+    width: 20px;
+    /* Rotate div */
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* Internet Explorer */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+}
+
+.card .card-no {
+    border-bottom: none;
+}
+
+.card .card-title {
+    color: #aaa;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.card .card-items-chlid {
+    padding-left: 16px;
+}
+
+.card .card-items-parent-chlid {
+    display: none;
+}
+
+.card .card-items-chlid .items-title {
+    padding-left: 12px;
+    color: #aaa;
+}
+
+.card .card-items .items-lable {
+    display: inline-block;
+    color: #aaa;
+}
+
+.card .card-items .items-icon {
+    padding-right: 20px;
+    position: relative;
+}
+
+.card .card-items .items-lable img {
+    height: 34px;
+    width: 100px;
+}
+.card .logo-img .card-img{
+    padding:0 2px;
+}
+.card .logo-img .card-img img {
+    width: 100%;
+    height: 150px;
+    padding: 5px 0;
+}
+
+.card .card-img img {
+    width: calc(100% - 10px);
+    height: 100px;
+    padding: 5px;
+}
+
+.card-items-chlid img {
+    width: 23%;
+    max-width: 178.5px;
+    max-height: 178.5px;
+}
+
+.card .conb div>p {
+    line-height: 1.6rem;
+}
+
+.card .cont11 {
+    width: 100%;
+}
+
+
+/* .card .clearfix {
+    border-top: 1px solid #dfdfdf;
+    padding-top: 16px;
+} */
+
+.card .cont>span {
+    display: block;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 16px;
+}
+
+.card .cont>.tx-c {
+    display: block;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.card .conb2 {
+    width: calc(100% - 4.5rem);
+    margin-left: 0.5rem;
+    margin-top: -10px;
+}
+
+.alert-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px;
+    color: rgb(100, 246, 107)
+}
+
+.alert-lable {
+    text-align: center;
+    font-size: .8rem;
+    color: #888;
+}
+
+.star img {
+    width: 23px;
+    height: 23px;
+    margin: 0 .5rem;
+}
+
+
+/* button */
+
+.button {
+    display: inline-block;
+    height: 28px;
+    width: 75px;
+    text-align: center;
+    color: #666;
+    margin: 0 5px;
+    outline: none;
+    border: 1px solid gainsboro;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.evaluate-center {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.evaluate-center img {
+    width: 23%;
+    max-width: 178.5px;
+    max-height: 178.5px;
+}
+
+.content-center {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #eee;
+}
+
+.content-alart {
+    padding-top: 5rem;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.evaluate-center textarea {
+    width: calc(95% - 20px);
+    border-color: #ddd;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    color: #666;
+}
+
+.evaluate-center .number {
+    position: absolute;
+    bottom: 8px;
+    right: 5%;
+    font-size: 0.5rem;
+    color: #666;
+}
+
+.button-default {
+    background-color: #6494F6 !important;
+    color: #fff;
+    border: 1px solid #6494F6;
+}
+
+.button-lg {
+    width: 95% !important;
+    height: 45px;
+}
+
+.button-md {
+    width: 40%;
+    height: 45px;
+}
+
+.button-sm {
+    width: 63px;
+    padding: 0 2px;
+    margin: 0 5px;
+    line-height: 26px;
+}
+
+.button-active {
+    border: 1px solid #6494F6 !important;
+    color: #6494F6 !important;
+}
+
+
+/**
+  * @author wei.zhao
+  * @describe tab
+  */
+
+.nav.nav-tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 99;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.8rem;
+}
+
+.nav.nav-tabs li {
+    list-style: none;
+    display: inline-block;
+    width: 48%;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+.nav.nav-tabs li a {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.nav.nav-tabs li.active {
+    border-bottom: 2px solid #6494F6;
+}
+
+.nav.nav-tabs li.active a {
+    color: #6494F6 !important;
+}
+
+.tab-content {
+    display: block;
+    position: relative;
+    font-size: 0.8rem;
+    padding-top: 40px;
+}
+
+.tab-content .tab-pane {
+    display: none;
+}
+
+.tab-content .tab-pane.active {
+    display: block !important;
+}
+
+
+/* tab end */
+
+.color {
+    color: #6494f6 !important;
+}
+
+.color-red {
+    color: #f23030 !important;
+}
+
+.color-yellow {
+    color: #f7ac0a !important;
+}
+
+.color-427 {
+    color: #427bff !important;
+}
+
+.color-666 {
+    color: #666666 !important;
+}
+
+.color-333 {
+    color: #333 !important;
+}
+
+.color-00b3ff {
+    color: #00b3ff !important;
+}
+
+.color-ff8a01 {
+    color: #ff8a01 !important;
+}
+
+.color-aaa {
+    color: #AAAAAA !important;
+}
+
+.bg-eee {
+    background-color: #EEEEEE;
+}
+
+.bg-6494f6 {
+    background-color: #6494f6;
+}
+
+.bg-e6cbb0 {
+    background-color: #e6cbb0 !important;
+}
+
+.bg-af763d {
+    background-color: #af763d !important;
+}
+
+.bg-6494f6 {
+    background-color: #6494f6 !important;
+}
+
+b {
+    font-weight: normal;
+}
+
+
+/* 重置轮播图样式 */
+
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 1px;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 2px;
+}
