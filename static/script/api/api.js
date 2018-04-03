@@ -215,6 +215,7 @@ $(document).ajaxSend(function (event, jqXHR, options) {
 	
 	jqXHR.setRequestHeader("token", token);
 	jqXHR.setRequestHeader("devicetype", "h5");
+	jqXHR.setRequestHeader("h5User-agent", "h5");
 });
 
 $(document).ajaxComplete(function (event, jqXHR, options) {
